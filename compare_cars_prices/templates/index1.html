@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block extra_head %}{% endblock %}
+<script src="{{ STATIC_URL }}js/angular/angular.min.js"></script>
+<script src="{{ STATIC_URL }}js/app/sampleapp.js"></script>
+{% block content %}
+    <div class="padded-content">
+        <div class="hedr container-fluid">
+            <header>
+                <div class="container">
+                    <div class="logo-blk">
+                        <img src="../static/css/img/logo.png" alt="logo" >
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"></div>    
+                        <div class="col-md-6 serh-blk"> 
+                        <form>
+                            <input type="text" class="form-control" placeholder="Enter City...." ng-model="SearchFilter" ng-enter="onChange(SearchFilter)">
+                        </form>
+                        <i class="glyphicon glyphicon-search"></i>
+                        </div>
+                        <div class="col-md-3"></div>    
+                    </div>
+                        <!-- <span class="glyphicon glyphicon-search" ></span> -->
+                </div>
+            </header>
+        </div>  
+    </div>      
+        <div id="main-content" class="container">
+        
+                <ng-view view-state>
+                
+                </ng-view>
+        </div>
+    
+{% endblock %}
+{% block extra_content %}
+
+<script type="text/javascript"></script>
+{% endblock %}

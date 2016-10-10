@@ -1,0 +1,33 @@
+.DS_Store
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+venv
+.idea
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+
+## client app
+node_modules
+npm-debug.log
+bower_components
+
+instance/*config.py
+config/production.py
+config/staging.py
+start.sh
+note.txt
+
+
+#resis dump
+dump.rdb
+
+*.env
+
+logs/*.log
+*.sql
+Procfile
+data

@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+
+<div class="container">
+
+	<h3 id="table_title">List of Makes</h3>
+
+{% if AllMakes%}
+	<ul>
+	    {% for car in AllMakes %}
+	    <li><h5><a href="{% url 'compare_cars:make_models' car.makes %}" >{{ car.makes }}</a></h5></li>  
+	    
+	    
+	    {% endfor %}
+	</ul>
+    
+{% else %}
+	<h3>no makes found!!!,thank you:)</h3>
+
+
+
+
+	
+{% endif %}
+
+</div>
+
+{% endblock content %}	
+
+ 

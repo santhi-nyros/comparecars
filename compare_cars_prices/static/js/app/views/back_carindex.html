@@ -1,0 +1,173 @@
+    <div id="main" >
+        
+        <div class="asideFilter">
+        <!--filters start  -->
+            <div class="filters"><h4>City</h4>
+
+                <select class="city City-Filter form-control" ng-model="search.city" ng-options="city for city in cities"  style="width: 250px">
+
+                </select>               
+            </div>       
+
+            <div class="filters"><h4>Year</h4>
+                <select class="form-control City-Filter" ng-model= "search.model_year" style="width: 250px">
+                    <option>1989</option>
+                    <option>1992</option>
+                    <option>1994</option>
+                    <option>1998</option>
+                    <option>2000</option>
+                    <option>2001</option>
+                    <option>2002</option>
+                    <option>2003</option>
+                    <option>2004</option>
+                    <option>2005</option>
+                    <option>2006</option>
+                    <option>2007</option>
+                    <option>2008</option>
+                    <option>2009</option>
+                    <option>2010</option>
+                    <option>2011</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                </select>                
+            </div>
+            <br>
+
+            <div class="filters"><h4>Budget : </h4>
+                <br> <strong style="float:left">{[{ priceRange.low_price_bound }]}</strong>
+                <strong style="float:right">{[{ priceRange.high_price_bound }]}</strong>
+                <slider floor="30000" ceiling="9000000" step="100000" ng-model-low="priceRange.low_price_bound" ng-model-high="priceRange.high_price_bound" ></slider>
+                
+    
+            </div>
+            <br><br>
+
+
+            <div class="filters"><h4>Makes</h4>
+            </div>
+            <br>
+            <!-- <div class="makes">
+                    <ul ng-repeat = "item in items" ><span class="makeHead">{[{ item.title}]}<input type="checkbox" onclick=""></span>                           
+                        <li>
+                            <div ng-repeat = "model in item.models" ><input type="checkbox"/><a href="#{[{ CityFilter }]}/{[{ item.title }]}/{[{ model }]}" id="acc_subtitle" ng-model="ModelFilter" ng-click="show()">{[{ model }]}</a>
+                            </div>
+                        </li>
+                    </ul>                 
+            </div>    -->   
+            <div class="makes">
+                <accordion>
+                    <accordion-group ng-repeat="item in items" is-open="item.open">
+                        <accordion-heading>
+                            <span class="makeHead">{[{ item.title}]} 
+                            <input type="checkbox" ng-checked="item.checked" ng-click="checkboxClick($index,item.title)" ng-model = "srh.car_make" id="checkposition"/></span>
+                        </accordion-heading>
+                        <div class="modelList">
+                            <div ng-repeat = "model in item.models" >
+                                {[{ model }]}
+                                <input type="checkbox" ng-click="checkboxClick2(item.title+'_'+$index,model)" id="model_check"/>
+                            </div>
+                        </div>
+                    </accordion-group>
+                </accordion>                                    
+            </div>                  
+        <!--filters end  -->
+        </div>
+        <!--Spinner -->
+        <div ng-show="loading">
+                <img class="spinner" src="http://michaelrienstra.com/jquery.cspinner/demo/spinner.gif"/>
+        </div>
+
+        <div class="asideInfo">
+        <!--Display Car Info start  -->
+        <div ng-repeat="model in filtered | unique:'car_model'">
+            <div ng-repeat="test in result=(filtered | filter:{'car_model':model.car_model} )">
+            </div>
+            <div class="car_details">                
+                {[{ model.car_model }]} <span>----></span>{[{ result.length }]}
+            </div>
+        </div>
+            {[{ filtered.length }]}
+            <div class="listing_item" ng-show="firstOne"><!--Display only first one -->
+               <!-- <div ng-if="models.length!=0">  --><!--Condition -->
+                <div ng-repeat="model in filtered =(models  | filter:makeFilter | filter:modelFilter | filter:search | filter:priceRange" class="item" >
+                   <!--  <div class="car_details" id="{[{ $index }]}" >
+                        <div class="img-div">
+                            <img src="{[{ model.car_image }]}" alt="Sorry,Image not found" style="margin-top: 15px;">
+                        </div>
+                        <div class="details-div">
+                            <h4><a href="{[{ model.car_href }]}" target="new">{[{ model.car_title }]}</a></h4>
+                            <h5 class="subtitles">Model : {[{ model.car_model }]}</h5>
+                            <h5 class="subtitles">City : {[{ model.city }]}</h5>
+                            <h5 class="subtitles">Model Year : {[{ model.model_year }]}</h5>
+                            <h5 class="subtitles" style="font-weight:bold">Price : {[{ model.price }]}</h5>
+                            <!<h5 class="subtitles">Car color : {[{ model.car_color }]}</h5> -->
+
+                        </div>
+                        <!-- <h6 class="subtitles" style="float: right; margin-right: 210px; margin-top:3px;">Website : {[{ model.website_name }]}</h6>
+                        <h6 class="subtitles" style="margin-top: 4px;margin-left:20px">Posted on : {[{ model.created }]}</h6>
+                        <h6 ng-show="see_more" style="float:right;margin-top: -25px;
+                        margin-right: 45px;"><a href="#seemore" class="seemore">SeeMore</a></h6> -->
+                     
+                    <!-- <div ng-show="see_more">
+                        <h6 ><button ng-click="onAll()" class="seemore">SeeMore</button></h6>
+                    </div> -->
+
+                
+           <!--  </div> -->
+                <!-- Sorry code -->
+          <!--       <div ng-if="models.length==0">
+                    <img src="static/images/sorry.png" class="error_img">
+                    <p> We’re sorry, there are no cars that meet your search criteria.
+                        Please try expanding your search and thanks for using CompareCarPrices.com??? </p>
+                </div> -->
+                <!-- Sorry code -->
+            </div>
+             <!-- <div ng-repeat="model in filtered | unique:'car_model'">
+            <div ng-repeat="test in result=(filtered | filter:{'car_model':model.car_model} )">
+            </div>
+
+                {[{ model.car_model}]} <span></span>{[{ result.length }]}
+            </div>
+            {[{ filtered.length }]}  -->
+            <!-- <div class="listing_item" ng-show="allData" ><!Display all --> 
+
+                <!-- <div ng-repeat="model in filtered =(models | filter:makeFilter | filter:modelFilter | filter:search | filter:priceRange)" class="item">
+                    <div class="car_details" id="{[{ $index }]}" >
+                        <div class="img-div">
+                         <img src="{[{ model.car_image }]}" alt="Sorry,Image not found" style="margin-top: 15px;">
+                        </div>
+                        <div class="details-div">
+                            <h4><a href="{[{ model.car_href }]}" target="new">{[{ model.car_title }]}</a></h4>
+                            <h5 class="subtitles">Model : {[{ model.car_model }]}</h5>
+                            <h5 class="subtitles">City : {[{ model.city }]}</h5>
+                            <h5 class="subtitles">Model Year : {[{ model.model_year }]}</h5>
+                            <h5 class="subtitles" style="font-weight:bold">Price : {[{ model.price }]}</h5>
+                        </div>                      
+                        <h6 class="subtitles" style="float: right; margin-right: 210px; margin-top:3px;">Website : {[{ model.website_name }]}</h6>
+                        <h6 class="subtitles" style="margin-top: 4px;margin-left:20px">Posted on : {[{ model.created }]}</h6>
+
+                        
+                    </div>
+                </div> -->
+                <!-- Increment Limit -->
+                    <span ng-show="filtered.length != 0">
+                        <button ng-click="incrementLimit()" class="seemore" id="more"><h6>Load More</h6></button>
+                        <h6 ><button ng-click="decrementLimit()" class="seemore">less</button></h6>
+                    </span>
+                        <!-- Increment Limit -->
+                <span ng-show="filtered.length == 0">
+                    <img src="static/images/sorry.png" class="error_img">
+                    <p> We’re sorry, there are no cars that meet your search criteria.
+                        Please try expanding your search and thanks for using CompareCarPrices.com</p>
+                </span>
+              
+            </div>
+
+        <!--Display Car Info end -->                
+        <!-- </div> -->
+            
+        <!-- <a style="display: block;" href="#" class="gototop" title="Go to top"></a> -->
+
+    </div>

@@ -1,0 +1,183 @@
+    <div id="main" >
+        
+        <div class="asideFilter">
+        <!--filters start  -->
+            <div class="filters"><h4>City</h4>
+
+                <select class="city City-Filter form-control" ng-model="search.city" ng-options="city for city in cities"  style="width: 250px">
+
+                </select>               
+            </div>       
+
+            <div class="filters"><h4>Year</h4>
+                <select class="form-control City-Filter" ng-model= "search.model_year" style="width: 250px">
+                    <option>1989</option>
+                    <option>1992</option>
+                    <option>1994</option>
+                    <option>1998</option>
+                    <option>2000</option>
+                    <option>2001</option>
+                    <option>2002</option>
+                    <option>2003</option>
+                    <option>2004</option>
+                    <option>2005</option>
+                    <option>2006</option>
+                    <option>2007</option>
+                    <option>2008</option>
+                    <option>2009</option>
+                    <option>2010</option>
+                    <option>2011</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                </select>                
+            </div>
+            <br>
+
+            <div class="filters"><h4>Budget : </h4>
+                <br> <strong style="float:left">{[{ priceRange.low_price_bound }]}</strong>
+                <strong style="float:right">{[{ priceRange.high_price_bound }]}</strong>
+                <slider floor="30000" ceiling="9000000" step="100000" ng-model-low="priceRange.low_price_bound" ng-model-high="priceRange.high_price_bound" ></slider>
+                
+    
+            </div>
+            <br><br>
+
+
+            <div class="filters"><h4>Makes</h4>
+            </div>
+            <br>
+            <!-- <div class="makes">
+                    <ul ng-repeat = "item in items" ><span class="makeHead">{[{ item.title}]}<input type="checkbox" onclick=""></span>                           
+                        <li>
+                            <div ng-repeat = "model in item.models" ><input type="checkbox"/><a href="#{[{ CityFilter }]}/{[{ item.title }]}/{[{ model }]}" id="acc_subtitle" ng-model="ModelFilter" ng-click="show()">{[{ model }]}</a>
+                            </div>
+                        </li>
+                    </ul>                 
+            </div>    -->   
+            <div class="makes">
+                <accordion>
+                    <accordion-group ng-repeat="item in items" is-open="item.open">
+                        <accordion-heading>
+                            <span class="makeHead">{[{ item.title}]} 
+                            <input type="checkbox" ng-checked="item.checked" ng-click="checkboxClick(item.title,$index)" ng-model = "srh.car_make" id="checkposition"/></span>
+                        </accordion-heading>
+                        <div class="modelList">
+                            <div ng-repeat = "model in item.models" >
+                                {[{ model }]}
+                                <input type="checkbox" ng-click="checkboxClick2(item.id,model,item.title)" id="model_check"/>
+                            </div>
+                        </div>
+                    </accordion-group>
+                </accordion>                                    
+            </div>                  
+        <!--filters end  -->
+        </div>
+        <!--Spinner -->
+        <div ng-show="loading">
+                <img class="spinner spinner-align" src="http://michaelrienstra.com/jquery.cspinner/demo/spinner.gif"/>
+        </div>
+
+        <div class="asideInfo">
+        <!--Display Car Info start  -->       
+<div ng-show = "hai"> hai </div>
+           
+            <div class="listing_item" ><!--Display all -->
+                <div ng-repeat="model in filtered | unique:'car_model'">    
+                    <div ng-repeat="test in result=(filtered | filter:{'car_model':model.car_model} )"></div>
+                    <div class="item" id="item">
+                        <div ng-repeat="i in result |limitTo:1 " id="available_info">
+                         <h3 style="">{[{ i.car_title }]}</h3>
+                         Model : {[{ i.car_model }]}<br>
+                         Total Available Cars : {[{ result.length }]}
+                         <!-- {[{ i.price}]}   -->                          
+                        </div>             
+                        
+
+
+                        <div class="dropdown">
+                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="padding-bottom:10px;float: right;margin-right: 42px;margin-top: -70px;"><img src="static/images/car2.jpg" style="height: 63px;width: 61px;">
+                                                        
+                            </a>
+                            <div class="item dropdown-menu" id="open" aria-labelledby="dropdownMenu1">
+                                <div ng-repeat="i in result |limitTo:1 "> 
+
+                                    <div class="car_details" id="{[{ $index }]}" >
+                                        <div class="img-div">
+                                         <img src="{[{ i.car_image }]}" alt="Sorry,Image not found" style="margin-top: 15px;">
+                                        </div>
+                                        <div class="details-div">
+                                            <h4><a href="{[{ i.car_href }]}" target="new">{[{ i.car_title }]}</a></h4>
+                                            <h5 class="subtitles">Model : {[{ i.car_model }]}</h5>
+                                            <h5 class="subtitles">City : {[{ i.city }]}</h5>
+                                            <h5 class="subtitles">Model Year : {[{ i.model_year }]}</h5>
+                                            <h5 class="subtitles" style="font-weight:bold">Price : {[{ i.price }]}</h5>
+                                        </div>                      
+                                        <h6 class="subtitles" style="float: left; margin-left: 120px; margin-top:3px;">Website : {[{ i.website_name }]}</h6>
+                                        <!-- <h6 class="subtitles" style="margin-top: 4px;margin-left:20px">Posted on : {[{ i.created }]}</h6> -->                                    
+                                        <span ng-show="filtered.length != 0">
+                                            <h6 class="subtitles"><a href="#seemore" class="seemore" id="more" ng-click="send_result(result)">seemore</a></h6>                     
+                                        </span>
+                            
+                                    </div>
+                                </div>                               
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+                <div ng-repeat="model in filtered =(models | filter:modelFilter | filter:search | filter:priceRange)">
+                </div>
+                
+
+            </div>
+
+            <!-- <p ng-show="loading" class="text-center">
+            Loading...
+            </p> -->
+
+
+
+                
+
+                <!-- <div ng-repeat="model in filtered | unique:'car_model'"> -->
+           <!--  {[{ model.car_model}]} -->
+            <!-- <div ng-repeat="test in result=(filtered | filter:{'car_model':model.car_model} )">
+                
+                
+            </div>
+             <div class="listing_item" >
+             <div class="car_details">
+              {[{ model.car_model}]} <span></span>{[{ result.length }]}
+            </div>
+
+            </div>
+        </div> -->
+                <!-- Increment Limit -->
+                   <!--  <span ng-show="filtered.length != 0">
+                        <button ng-click="incrementLimit()" class="seemore" id="more"><h6>Load More</h6></button>
+                        <h6 ><button ng-click="decrementLimit()" class="seemore">less</button></h6>
+                    </span> -->
+                        <!-- Increment Limit -->
+                <span ng-show="filtered.length == 0  ">
+                    <div>
+                    <img src="static/images/sorry.png" class="error_img">
+                    <p> We’re sorry, there are no cars that meet your search criteria.
+                        Please try expanding your search and thanks for using CompareCarPrices.com</p>
+                    </div>
+                </span>
+              
+            </div>
+
+        <!--Display Car Info end -->                
+        <!-- </div> -->
+            
+        <!-- <a style="display: block;" href="#" class="gototop" title="Go to top"></a> -->
+
+        <!-- <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a> -->
+
+    </div>

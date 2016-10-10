@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html ng-app="Tipstry" class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html ng-app="Tipstry" class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html ng-app="Tipstry" class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html ng-app="myApp" class="no-js ng-scope" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	
+	
+	
+	<link rel="stylesheet" href="django%20and%20angular_files/bootstrap.css">
+	<link rel="stylesheet" href="django%20and%20angular_files/style.css">
+	<link rel="stylesheet" href="django%20and%20angular_files/angular-slider.css">
+	<script src="django%20and%20angular_files/moment.js"></script>
+	<script src="django%20and%20angular_files/jquery.js"></script>
+	<script>window.jQuery || document.write('<script src="/static/js/libs/jquery.min.js"><\/script>')</script>
+	<script src="django%20and%20angular_files/bootstrap.js"></script>	
+	<script src="django%20and%20angular_files/angular.js"></script><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style>
+	<script src="django%20and%20angular_files/angular-resource.js"></script>
+    <script src="django%20and%20angular_files/angular-cookies.js"></script>
+    <script src="django%20and%20angular_files/ui-bootstrap-tpls-0.js"></script>
+	<script src="django%20and%20angular_files/sampleapp.js"></script>
+	 <!-- <script data-require="angular.js@1.2.0-rc1" data-semver="1.2.0-rc1" src="http://code.angularjs.org/1.2.0rc1/angular.js"></script> -->
+  <script type="text/javascript" src="django%20and%20angular_files/angular-slider.js" charset="utf-8"></script>    
+    
+	
+
+	<title>
+		Compare Car Prices
+	</title>
+</head>
+
+<body class="ng-scope" ng-controller="myController">
+	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+	
+
+	<!-- end #menu -->	
+	
+    <div class="padded-content">
+        <div class="hedr container-fluid">
+            <header>
+                <div class="container">
+                    <div class="logo-blk">
+                        <img src="django%20and%20angular_files/logo.png" alt="logo">
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"></div>    
+                        <div class="col-md-6 serh-blk"> <input class="form-control" placeholder="Enter City.." id="searchTop" type="text">
+                        <i class="glyphicon glyphicon-search"></i>
+                        </div>
+                        <div class="col-md-3"></div>    
+                    </div>
+                        <!-- <span class="glyphicon glyphicon-search" ></span> -->
+                </div>
+            </header>
+        </div>  
+    </div>      
+        <div id="main-content" class="container">
+                <ng-view view-state=""><br class="ng-scope">
+
+<div class="row ng-scope">
+
+                <div class="selectFilter">
+
+                    
+                    <div class="filter">
+                    <h4>Select City</h4> 
+                    <select ng-model="CityFilter" ng-options="city for city in cities" ng-change="onChange(CityFilter)" class="City-Filter ng-pristine ng-valid"><option selected="selected" value="?"></option><option value="0">Kolkata</option><option value="1">Chandigarh</option><option value="2">Bangalore</option><option value="3">Mumbai</option><option value="4">Delhi</option><option value="5">Pune</option><option value="6">Ahmedabad</option><option value="7">Chennai</option><option value="8">Noida</option><option value="9">Hyderabad</option></select>
+                                      
+                                                
+                    </div><br><br>
+
+                    <div class="filters">
+                        <h4>Makes</h4> 
+                        
+                        <accordion><div class="accordion" ng-transclude="">
+                            <!-- ngRepeat: item in items --><ul ng-repeat="item in items" class="accordion-style ng-scope">
+                                <li style="list-style:none;">
+                                    <div is-open="isopen" class="accordion-group">
+  <div class="accordion-heading"><a class="accordion-toggle ng-binding" ng-click="isOpen = !isOpen" accordion-transclude="heading">
+                                            <div class="ng-scope">
+                                                <h3 class="ng-binding" id="acc_title">Maruti Suzuki </h3>
+
+                                            </div>
+                                        </a></div>
+  <div style="height: 0px;" class="accordion-body collapse" collapse="!isOpen">
+    <div class="accordion-inner" ng-transclude="">
+                                        <accordion-heading class="ng-scope" ng-click="isopen=!isopen"></accordion-heading>
+                                        <!-- ngRepeat: model in item.models --><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Maruti%20Suzuki/Swift" id="acc_subtitle" ng-model="ModelFilter">Swift</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Maruti%20Suzuki/Alto" id="acc_subtitle" ng-model="ModelFilter">Alto</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Maruti%20Suzuki/Zen" id="acc_subtitle" ng-model="ModelFilter">Zen</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Maruti%20Suzuki/800" id="acc_subtitle" ng-model="ModelFilter">800</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Maruti%20Suzuki/A-Star" id="acc_subtitle" ng-model="ModelFilter">A-Star</a></h6>
+                                    </div>
+                                    </div>  </div>
+</div>
+                                </li>
+                            </ul><ul ng-repeat="item in items" class="accordion-style ng-scope">
+                                <li style="list-style:none;">
+                                    <div is-open="isopen" class="accordion-group">
+  <div class="accordion-heading"><a class="accordion-toggle ng-binding" ng-click="isOpen = !isOpen" accordion-transclude="heading">
+                                            <div class="ng-scope">
+                                                <h3 class="ng-binding" id="acc_title">Hyundai </h3>
+
+                                            </div>
+                                        </a></div>
+  <div style="height: 0px;" class="accordion-body collapse" collapse="!isOpen">
+    <div class="accordion-inner" ng-transclude="">
+                                        <accordion-heading class="ng-scope" ng-click="isopen=!isopen"></accordion-heading>
+                                        <!-- ngRepeat: model in item.models --><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Hyundai/Verna" id="acc_subtitle" ng-model="ModelFilter">Verna</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Hyundai/Accent" id="acc_subtitle" ng-model="ModelFilter">Accent</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Hyundai/Elantra" id="acc_subtitle" ng-model="ModelFilter">Elantra</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Hyundai/Santro" id="acc_subtitle" ng-model="ModelFilter">Santro</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Hyundai/Sonata" id="acc_subtitle" ng-model="ModelFilter">Sonata</a></h6>
+                                    </div>
+                                    </div>  </div>
+</div>
+                                </li>
+                            </ul><ul ng-repeat="item in items" class="accordion-style ng-scope">
+                                <li style="list-style:none;">
+                                    <div is-open="isopen" class="accordion-group">
+  <div class="accordion-heading"><a class="accordion-toggle ng-binding" ng-click="isOpen = !isOpen" accordion-transclude="heading">
+                                            <div class="ng-scope">
+                                                <h3 class="ng-binding" id="acc_title">Honda </h3>
+
+                                            </div>
+                                        </a></div>
+  <div style="height: 0px;" class="accordion-body collapse" collapse="!isOpen">
+    <div class="accordion-inner" ng-transclude="">
+                                        <accordion-heading class="ng-scope" ng-click="isopen=!isopen"></accordion-heading>
+                                        <!-- ngRepeat: model in item.models --><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Honda/Accord" id="acc_subtitle" ng-model="ModelFilter">Accord</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Honda/Amaze" id="acc_subtitle" ng-model="ModelFilter">Amaze</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Honda/Civic" id="acc_subtitle" ng-model="ModelFilter">Civic</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Honda/City" id="acc_subtitle" ng-model="ModelFilter">City</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Honda/CR-V" id="acc_subtitle" ng-model="ModelFilter">CR-V</a></h6>
+                                    </div>
+                                    </div>  </div>
+</div>
+                                </li>
+                            </ul><ul ng-repeat="item in items" class="accordion-style ng-scope">
+                                <li style="list-style:none;">
+                                    <div is-open="isopen" class="accordion-group">
+  <div class="accordion-heading"><a class="accordion-toggle ng-binding" ng-click="isOpen = !isOpen" accordion-transclude="heading">
+                                            <div class="ng-scope">
+                                                <h3 class="ng-binding" id="acc_title">Volkswagen </h3>
+
+                                            </div>
+                                        </a></div>
+  <div style="height: 0px;" class="accordion-body collapse" collapse="!isOpen">
+    <div class="accordion-inner" ng-transclude="">
+                                        <accordion-heading class="ng-scope" ng-click="isopen=!isopen"></accordion-heading>
+                                        <!-- ngRepeat: model in item.models --><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Volkswagen/Vento" id="acc_subtitle" ng-model="ModelFilter">Vento</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Volkswagen/Beetle" id="acc_subtitle" ng-model="ModelFilter">Beetle</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Volkswagen/Passat" id="acc_subtitle" ng-model="ModelFilter">Passat</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Volkswagen/Polo" id="acc_subtitle" ng-model="ModelFilter">Polo</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Volkswagen/Jetta" id="acc_subtitle" ng-model="ModelFilter">Jetta</a></h6>
+                                    </div>
+                                    </div>  </div>
+</div>
+                                </li>
+                            </ul><ul ng-repeat="item in items" class="accordion-style ng-scope">
+                                <li style="list-style:none;">
+                                    <div is-open="isopen" class="accordion-group">
+  <div class="accordion-heading"><a class="accordion-toggle ng-binding" ng-click="isOpen = !isOpen" accordion-transclude="heading">
+                                            <div class="ng-scope">
+                                                <h3 class="ng-binding" id="acc_title">Tata </h3>
+
+                                            </div>
+                                        </a></div>
+  <div style="height: 0px;" class="accordion-body collapse" collapse="!isOpen">
+    <div class="accordion-inner" ng-transclude="">
+                                        <accordion-heading class="ng-scope" ng-click="isopen=!isopen"></accordion-heading>
+                                        <!-- ngRepeat: model in item.models --><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Tata/Safari" id="acc_subtitle" ng-model="ModelFilter">Safari</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Tata/Indigo" id="acc_subtitle" ng-model="ModelFilter">Indigo</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Tata/Nano" id="acc_subtitle" ng-model="ModelFilter">Nano</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Tata/Manza" id="acc_subtitle" ng-model="ModelFilter">Manza</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Tata/Indica" id="acc_subtitle" ng-model="ModelFilter">Indica</a></h6>
+                                    </div>
+                                    </div>  </div>
+</div>
+                                </li>
+                            </ul><ul ng-repeat="item in items" class="accordion-style ng-scope">
+                                <li style="list-style:none;">
+                                    <div is-open="isopen" class="accordion-group">
+  <div class="accordion-heading"><a class="accordion-toggle ng-binding" ng-click="isOpen = !isOpen" accordion-transclude="heading">
+                                            <div class="ng-scope">
+                                                <h3 class="ng-binding" id="acc_title">Toyota </h3>
+
+                                            </div>
+                                        </a></div>
+  <div style="height: 0px;" class="accordion-body collapse" collapse="!isOpen">
+    <div class="accordion-inner" ng-transclude="">
+                                        <accordion-heading class="ng-scope" ng-click="isopen=!isopen"></accordion-heading>
+                                        <!-- ngRepeat: model in item.models --><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Toyota/Innova" id="acc_subtitle" ng-model="ModelFilter">Innova</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Toyota/Fortuner" id="acc_subtitle" ng-model="ModelFilter">Fortuner</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Toyota/Corolla" id="acc_subtitle" ng-model="ModelFilter">Corolla</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Toyota/Altis" id="acc_subtitle" ng-model="ModelFilter">Altis</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Toyota/Camry" id="acc_subtitle" ng-model="ModelFilter">Camry</a></h6>
+                                    </div>
+                                    </div>  </div>
+</div>
+                                </li>
+                            </ul><ul ng-repeat="item in items" class="accordion-style ng-scope">
+                                <li style="list-style:none;">
+                                    <div is-open="isopen" class="accordion-group">
+  <div class="accordion-heading"><a class="accordion-toggle ng-binding" ng-click="isOpen = !isOpen" accordion-transclude="heading">
+                                            <div class="ng-scope">
+                                                <h3 class="ng-binding" id="acc_title">Ford </h3>
+
+                                            </div>
+                                        </a></div>
+  <div style="height: 0px;" class="accordion-body collapse" collapse="!isOpen">
+    <div class="accordion-inner" ng-transclude="">
+                                        <accordion-heading class="ng-scope" ng-click="isopen=!isopen"></accordion-heading>
+                                        <!-- ngRepeat: model in item.models --><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Ford/Fusion" id="acc_subtitle" ng-model="ModelFilter">Fusion</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Ford/EcoSport" id="acc_subtitle" ng-model="ModelFilter">EcoSport</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Ford/Endeavour" id="acc_subtitle" ng-model="ModelFilter">Endeavour</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Ford/Ikon" id="acc_subtitle" ng-model="ModelFilter">Ikon</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Ford/Fiesta" id="acc_subtitle" ng-model="ModelFilter">Fiesta</a></h6>
+                                    </div>
+                                    </div>  </div>
+</div>
+                                </li>
+                            </ul><ul ng-repeat="item in items" class="accordion-style ng-scope">
+                                <li style="list-style:none;">
+                                    <div is-open="isopen" class="accordion-group">
+  <div class="accordion-heading"><a class="accordion-toggle ng-binding" ng-click="isOpen = !isOpen" accordion-transclude="heading">
+                                            <div class="ng-scope">
+                                                <h3 class="ng-binding" id="acc_title">Chevrolet </h3>
+
+                                            </div>
+                                        </a></div>
+  <div style="height: 0px;" class="accordion-body collapse" collapse="!isOpen">
+    <div class="accordion-inner" ng-transclude="">
+                                        <accordion-heading class="ng-scope" ng-click="isopen=!isopen"></accordion-heading>
+                                        <!-- ngRepeat: model in item.models --><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Chevrolet/Aveo" id="acc_subtitle" ng-model="ModelFilter">Aveo</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Chevrolet/Aveo-Old" id="acc_subtitle" ng-model="ModelFilter">Aveo-Old</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Chevrolet/Aveo-U-VA" id="acc_subtitle" ng-model="ModelFilter">Aveo-U-VA</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Chevrolet/Captiva" id="acc_subtitle" ng-model="ModelFilter">Captiva</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Chevrolet/Enjoy" id="acc_subtitle" ng-model="ModelFilter">Enjoy</a></h6>
+                                    </div>
+                                    </div>  </div>
+</div>
+                                </li>
+                            </ul><ul ng-repeat="item in items" class="accordion-style ng-scope">
+                                <li style="list-style:none;">
+                                    <div is-open="isopen" class="accordion-group">
+  <div class="accordion-heading"><a class="accordion-toggle ng-binding" ng-click="isOpen = !isOpen" accordion-transclude="heading">
+                                            <div class="ng-scope">
+                                                <h3 class="ng-binding" id="acc_title">Mahindra </h3>
+
+                                            </div>
+                                        </a></div>
+  <div style="height: 0px;" class="accordion-body collapse" collapse="!isOpen">
+    <div class="accordion-inner" ng-transclude="">
+                                        <accordion-heading class="ng-scope" ng-click="isopen=!isopen"></accordion-heading>
+                                        <!-- ngRepeat: model in item.models --><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Mahindra/Scorpio" id="acc_subtitle" ng-model="ModelFilter">Scorpio</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Mahindra/Bolero" id="acc_subtitle" ng-model="ModelFilter">Bolero</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Mahindra/Xylo" id="acc_subtitle" ng-model="ModelFilter">Xylo</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Mahindra/Jeep" id="acc_subtitle" ng-model="ModelFilter">Jeep</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Mahindra/Quanto" id="acc_subtitle" ng-model="ModelFilter">Quanto</a></h6>
+                                    </div>
+                                    </div>  </div>
+</div>
+                                </li>
+                            </ul><ul ng-repeat="item in items" class="accordion-style ng-scope">
+                                <li style="list-style:none;">
+                                    <div is-open="isopen" class="accordion-group">
+  <div class="accordion-heading"><a class="accordion-toggle ng-binding" ng-click="isOpen = !isOpen" accordion-transclude="heading">
+                                            <div class="ng-scope">
+                                                <h3 class="ng-binding" id="acc_title">Skoda </h3>
+
+                                            </div>
+                                        </a></div>
+  <div style="height: 0px;" class="accordion-body collapse" collapse="!isOpen">
+    <div class="accordion-inner" ng-transclude="">
+                                        <accordion-heading class="ng-scope" ng-click="isopen=!isopen"></accordion-heading>
+                                        <!-- ngRepeat: model in item.models --><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Skoda/Fabia" id="acc_subtitle" ng-model="ModelFilter">Fabia</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Skoda/Laura" id="acc_subtitle" ng-model="ModelFilter">Laura</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Skoda/Superb" id="acc_subtitle" ng-model="ModelFilter">Superb</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Skoda/Octavia" id="acc_subtitle" ng-model="ModelFilter">Octavia</a></h6>
+                                    </div><div class="ng-scope" ng-repeat="model in item.models">
+                                            <h6><a class="ng-pristine ng-valid ng-binding" href="#/Skoda/Rapid" id="acc_subtitle" ng-model="ModelFilter">Rapid</a></h6>
+                                    </div>
+                                    </div>  </div>
+</div>
+                                </li>
+                            </ul>
+                        </div></accordion>
+                    </div>
+                    
+                    <!-- 
+                    <div class="filters"><h4>Select Price</h4>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="blankCheckbox" value="option1" aria-label="1 Lakh" ng-model= "PriceFilter">1 Lakh
+                            </label><br>
+                            <label>
+                                <input type="checkbox" id="blankCheckbox" value="option1" aria-label="2 Lakh" ng-model= "PriceFilter1" >2 Lakhs
+                            </label><br>
+                            <label>
+                                <input type="checkbox" id="blankCheckbox" value="option1" aria-label="3 Lakh" ng-model= "PriceFilter2">3 Lakhs
+                            </label><br>
+                            <label>
+                                <input type="checkbox" id="blankCheckbox" value="option1" aria-label="4 Lakh" ng-model= "PriceFilter3">4 Lakhs
+                            </label>
+                            
+                        </div>
+                    </div> -->
+                    <br><br>
+                    
+                     <div class="filters"><h4>Select Price</h4>
+
+                      <select class="form-control City-Filter ng-pristine ng-valid" ng-model="search.price"><option selected="selected" value="? undefined:undefined ?"></option>
+                            <option value="100000">100000</option>
+                            <option value="200000">200000</option>
+                            <option value="500000">500000</option>
+                            <option value="700000">700000</option>
+                            <option value="900000">900000</option>
+                            <option value="1000000">1000000</option>
+                            <option value="1100000">1100000</option>
+                            <option value="1200000">1200000</option>
+                            <option value="1500000">1500000</option>
+                            <option value="2000000">2000000</option>
+                        </select>
+                    </div><br>
+                     <slider class="ng-isolate-scope ng-scope" floor="0" ceiling="50" ng-model-low="lower_price_bound" ng-model-high="upper_price_bound"><span class="bar"></span><span class="bar selection"></span><span class="pointer"></span><span class="pointer"></span><span ng-bind-html-unsafe="'Range: ' + translate({value: diff})" class="bubble selection"></span><span ng-bind-html-unsafe="translate({value: floor})" class="bubble limit"></span><span ng-bind-html-unsafe="translate({value: ceiling})" class="bubble limit"></span><span ng-bind-html-unsafe="translate({value: ngModelLow})" class="bubble"></span><span ng-bind-html-unsafe="translate({value: ngModelHigh})" class="bubble"></span><span ng-bind-html-unsafe="translate({value: ngModelLow}) + ' - ' + translate({value: ngModelHigh})" class="bubble"></span></slider>
+    lower_price_bound: <strong>{{lower_price_bound}}</strong>
+    &nbsp;
+    upper_price_bound: <strong>{{upper_price_bound}}</strong>
+
+    <hr><br>
+                    
+                    <div class="filters"><h4>Select Model Year</h4>
+
+                      <select class="form-control City-Filter" ng-model="search.model_year">
+                            <option selected="selected" value="1989">1989</option>
+                            <option value="1992">1992</option>
+                            <option value="1994">1994</option>
+                            <option value="1998">1998</option>
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                            <option value="2002">2002</option>
+                            <option value="2003">2003</option>
+                            <option value="2004">2004</option>
+                            <option value="2005">2005</option>
+                            <option value="2006">2006</option>
+                            <option value="2007">2007</option>
+                            <option value="2008">2008</option>
+                            <option value="2009">2009</option>
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                            <option value="2012">2012</option>
+                            <option value="2013">2013</option>
+                            <option value="2014">2014</option>
+                            <option value="2015">2015</option>
+                        </select>
+                    
+
+                    </div>
+                <!--Filters end -->
+                </div>
+           
+                <!--Details Start -->
+            <div class="selectDetails">
+
+            <div class="span9">
+                <h2 style="text-align:center">information </h2>
+                 
+                
+                <!-- ngRepeat: model in models | filter: search | filter:priceRange -->
+            </div>
+            </div>
+           
+                                
+                        
+                
+                <!--Details Close -->
+            </div>
+                <!-- <div class="col-md-2">
+                </div> -->
+
+
+
+
+
+
+
+</ng-view>
+        </div>
+    
+	
+	
+
+<script type="text/javascript"></script>
+		
+	
+				
+			
+	<!-- userrules -->
+	<!-- Mixpanel -->
+	<!-- Google Analytics -->
+	<!-- kissinsights / qualaroo - Disabled 1/14 per James' request-->
+	<!-- CrazyEgg -->
+	<!-- Begin Inspectlet Embed Code -->
+	<!-- kissmetrics -->
+	
+
+
+
+
+</body></html>

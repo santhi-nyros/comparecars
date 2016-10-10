@@ -1,0 +1,108 @@
+    <div id="main" >
+        
+        <div class="asideFilter">
+        <!--filters start  -->
+            <div class="filters"><h4>City</h4>
+
+                <select class="city City-Filter form-control" ng-model="CityFilter" ng-options="city for city in cities" ng-change="onChange(CityFilter)" style="width: 250px">
+
+                </select>               
+            </div>       
+
+            <div class="filters"><h4>Year</h4>
+                <select class="form-control City-Filter" ng-model= "search.model_year" style="width: 250px">
+                    <option>1989</option>
+                    <option>1992</option>
+                    <option>1994</option>
+                    <option>1998</option>
+                    <option>2000</option>
+                    <option>2001</option>
+                    <option>2002</option>
+                    <option>2003</option>
+                    <option>2004</option>
+                    <option>2005</option>
+                    <option>2006</option>
+                    <option>2007</option>
+                    <option>2008</option>
+                    <option>2009</option>
+                    <option>2010</option>
+                    <option>2011</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                </select>                
+            </div>
+            <br>
+            <div class="filters"><h4>Makes</h4>
+            </div>
+            <br>
+            <div class="makes">
+                    <ul ng-repeat = "item in items" ><span class="makeHead">{[{ item.title}]}<input type="checkbox" onclick=""></span>
+                           <!--  <li></li> -->
+                        <li>
+                            <div ng-repeat = "model in item.models" ><input type="checkbox"/><a href="#{[{ CityFilter }]}/{[{ item.title }]}/{[{ model }]}" id="acc_subtitle" ng-model="ModelFilter" ng-click="show()">{[{ model }]}</a>
+                            </div>
+                        </li>
+                    </ul>                 
+            </div>            
+        <!--filters end  -->
+        </div>
+
+        <div class="asideInfo">
+        <!--Display Car Info start  -->
+            <div class="listing_item" ng-show="firstOne"><!--Display only first one -->
+
+                <div ng-repeat="model in models | limitTo:1 | filter: search | filter:priceRange" class="item" >
+                    <div class="car_details" id="{[{ $index }]}" >
+                        <div class="img-div">
+                            <img src="{[{ model.car_image }]}" alt="Sorry,Image not found" style="margin-top: 15px;">
+                        </div>
+                        <div class="details-div">
+                            <h4><a href="{[{ model.car_href }]}" target="new">{[{ model.car_title }]}</a></h4>
+                            <h5 class="subtitles">Model : {[{ model.car_model }]}</h5>
+                            <h5 class="subtitles">City : {[{ model.city }]}</h5>
+                            <h5 class="subtitles">Model Year : {[{ model.model_year }]}</h5>
+                            <h5 class="subtitles">Price : {[{ model.price }]}</h5>
+                            <!-- <h5 class="subtitles">Car color : {[{ model.car_color }]}</h5> -->
+
+                        </div>
+                        <h6 style="float: right; margin-right: 210px; margin-top:3px;">Website : {[{ model.website_name }]}</h6>
+                        <h6 style="margin-top: 4px;">Posted on : {[{ model.created }]}</h6>
+                        <h6 ng-show="see_more" style="float:right;margin-top: -25px;
+                        margin-right: 45px;"><button ng-click="onAll()" class="seemore">SeeMore</button></h6>
+                    </div>
+                    <!-- <div ng-show="see_more">
+                        <h6 ><button ng-click="onAll()" class="seemore">SeeMore</button></h6>
+                    </div> -->
+
+                </div>
+            </div>
+
+            <div class="listing_item" ng-show="allData" ><!--Display all -->
+
+                <div ng-repeat="model in models | filter: search | filter:priceRange" class="item">
+                    <div class="car_details" id="{[{ $index }]}" >
+                        <div class="img-div">
+                         <img src="{[{ model.car_image }]}" alt="Sorry,Image not found" style="margin-top: 15px;">
+                        </div>
+                        <div class="details-div">
+                            <h4><a href="{[{ model.car_href }]}" target="new">{[{ model.car_title }]}</a></h4>
+                            <h5 class="subtitles">Model : {[{ model.car_model }]}</h5>
+                            <h5 class="subtitles">City : {[{ model.city }]}</h5>
+                            <h5 class="subtitles">Model Year : {[{ model.model_year }]}</h5>
+                            <h5 class="subtitles">Price : {[{ model.price }]}</h5>
+                        </div>                      
+                        <h6 style="float: right; margin-right: 210px; margin-top:3px;">Website : {[{ model.website_name }]}</h6>
+                        <h6 style="margin-top: 4px;">Posted on : {[{ model.created }]}</h6>
+                    </div>
+                </div>
+              
+            </div>
+
+        <!--Display Car Info end -->                
+        </div>
+            
+        <a style="display: block;" href="#" class="gototop" title="Go to top"></a>
+
+    </div>

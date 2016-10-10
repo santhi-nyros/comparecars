@@ -1,0 +1,145 @@
+body, html, ul, li, p, a, img, span, h1, h2, h3, h4, h5, h6{padding: 0px;margin: 0px; 
+}
+.clr{clear: both;}
+img{max-width: 100%;}
+body{background: #efefef!important;}
+.hedr{
+		height: 280px;
+	background: url(../img/hdr-bg.jpg) no-repeat; 
+	padding: 0px!important;
+	margin: 0px!important;
+}
+header{
+	width: 100%;
+	height: 280px;
+	background: url(../img/hdr-bg-clr.png) repeat;
+}
+
+.logo-blk{
+	margin: 20px auto 30px;
+	height: 150px;
+	width: 200px;	
+	
+}
+
+.serh-blk{background: #fff;box-shadow: 1px 2px 3px #000;height: 54px;}
+.serh-blk input[type=text]{background: none!important;border: none!important;height: 100%;box-shadow: none!important;width: 500px;float: left;}
+.serh-blk i{font-size: 30px; color: #4c4c4c;float: right;margin-top: 10px;}
+
+#mklist{list-style: none;}
+.features li.hvchild span.rcircle {
+    background: rgba(0, 0, 0, 0) url("http://images.cartrade.com/images4/sprites_imgs.png") no-repeat scroll -59px -424px;
+    color: #000000;
+    display: block;
+    float: left;
+    height: 18px;
+    margin-right: 10px;
+    width: 18px;
+}
+
+
+.pull-left {
+    float: left;
+}
+
+
+.carDetails li{
+	list-style-type: none;
+	border-bottom-style: 1px solid;
+}
+
+.selectFilter {
+	width: 300px;
+	float: left;
+}
+
+.selectFilter .filters{
+	width: 250px;
+
+}
+.selectDetails {
+	width : 650px;
+	float: right;
+}
+
+.accordion-style{
+	margin-left: -16px;
+}
+
+.accordion {
+    width: 200px;
+    margin-top: 10px;
+ }
+
+.car_details{
+	border: 3px solid #808080;
+border-radius: 10px;
+padding: 20px;
+margin-bottom: 30px;
+background-color: white;
+width: 572px;
+height: 200px;
+}
+.img-div{
+	/*border: 1px solid black;*/
+width: 285px;
+height: 183px;
+}
+.details-div{
+	margin-top: -186px;
+/*border: 1px solid #000;*/
+width: 250px;
+height: 168px;
+padding: 7px;
+float: right;
+}
+
+.subtitles{
+	padding-top: 10px;
+	color: gray;
+	font-weight: initial;
+
+}
+
+#acc_title{
+	font-size:15px;
+	margin-bottom:-15px;
+	border: none;
+	text-align: left;
+}
+
+#acc_subtitle{
+	color: gray;
+    
+}
+a,a:focus,a:hover,a:active{
+	color:black;
+	text-decoration: none;
+}
+
+.accordion-heading {
+    border-bottom: 0px none;
+    background-color: white;
+    border-radius: 10px;
+    text-align: left;
+    height: 50px;
+    width: 215px;
+}
+
+.collapse {
+    position: relative;
+    overflow: hidden;
+    transition: height 0.35s ease 0s;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.City-Filter{
+	margin-left: -14px;
+	margin-bottom: -19px;
+}
+
+.titles{
+	margin-left: 40px;
+margin-bottom: 5px;
+}

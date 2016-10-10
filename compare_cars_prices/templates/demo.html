@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<div class="row">
+                            <div class="col-sm-12">
+                                <form role="form" action="/cars/searching/" name="test" method="post">
+                                    {% csrf_token %}
+                                    <div class="form-group"><label>Filename</label> <input type="text" class="form-control" placeholder="search_word" name="search_word" required></div>                                    
+                                        <button type="submit" style="display:none" class="btn btn-sm btn-primary pull-right m-t-n-xs" ><i class="fa fa-cog"></i>&nbsp;&nbsp;<strong>Search</strong></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+</body>
+</html>

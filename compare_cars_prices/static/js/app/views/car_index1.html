@@ -1,0 +1,107 @@
+    <div id="main1" >
+        <div id="sticky-anchor"></div>
+        <div class="asideFilter" id="sticky">
+        <!--filters start  -->
+
+            <!-- <a href="#/" >Go Back</a> -->
+            <button ng-click="go()" class="home_button"><img src="static/images/back.jpg" width="50px" height="50px" /></button>
+        
+       
+            <div class="filters"><h4>City</h4>
+
+                <select class="city City-Filter form-control" ng-model="search.city" ng-options="city for city in cities"  style="width: 250px">
+
+                </select>               
+            </div>       
+
+            <div class="filters"><h4>Year</h4>
+                <select class="form-control City-Filter" ng-model= "search.model_year" style="width: 250px">
+                    <option>1989</option>
+                    <option>1992</option>
+                    <option>1994</option>
+                    <option>1998</option>
+                    <option>2000</option>
+                    <option>2001</option>
+                    <option>2002</option>
+                    <option>2003</option>
+                    <option>2004</option>
+                    <option>2005</option>
+                    <option>2006</option>
+                    <option>2007</option>
+                    <option>2008</option>
+                    <option>2009</option>
+                    <option>2010</option>
+                    <option>2011</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                </select>                
+            </div>
+            <br>
+
+            <div class="filters"><h4>Budget : </h4>
+                <br> <strong style="float:left">{[{ priceRange.low_price_bound }]}</strong>
+                <strong style="float:right">{[{ priceRange.high_price_bound }]}</strong>
+                <slider floor="30000" ceiling="9000000" step="100000" ng-model-low="priceRange.low_price_bound" ng-model-high="priceRange.high_price_bound" ></slider>
+                
+    
+            </div>
+            <br><br>
+                                    
+        <!--filters end  -->
+        </div>
+
+
+
+        <!--Spinner -->
+        <div ng-show="loading">
+                <img class="spinner spinner-align" src="http://michaelrienstra.com/jquery.cspinner/demo/spinner.gif"/>
+        </div>
+
+        <div class="asideInfo resultdiv">
+        <!--Display Car Info start  -->
+           
+        <!--     {[{ filtered.length }]} -->
+            <!-- <div >This will stay at top of page</div> -->
+            
+            <div class="listing_item" when-scrolled="more()"><!--Display all -->
+
+                <div ng-repeat="model in filtered =(result | limitTo:limit |filter:search | filter:priceRange)" class="item">
+                    <div class="car_details" id="{[{ $index }]}" >
+                        <div class="img-div">
+                         <img src="{[{ model.car_image }]}" alt="Sorry,Image not found" style="margin-top: 15px;">
+                        </div>
+                        <div class="details-div">
+                            <h4><a href="{[{ model.car_href }]}" target="new">{[{ model.car_title }]}</a></h4>
+                            <h5 class="subtitles">Model : {[{ model.car_model }]}</h5>
+                            <h5 class="subtitles">City : {[{ model.city }]}</h5>
+                            <h5 class="subtitles">Model Year : {[{ model.model_year }]}</h5>
+                            <h5 class="subtitles" style="font-weight:bold">Price : {[{ model.price }]}</h5>
+                        </div>                      
+                        <h6 class="subtitles" style="float: right; margin-right: 210px; margin-top:3px;">Website : {[{ model.website_name }]}</h6>
+                        <!-- <h6 class="subtitles" style="margin-top: 4px;margin-left:20px">Posted on : {[{ model.created }]}</h6> -->
+
+                        
+                    </div>
+                </div>
+                <!-- Increment Limit -->
+                    <!-- <span ng-show="filtered.length != 0">
+                        <button ng-click="incrementLimit()" class="seemore" id="more"><h6>Load More</h6></button>
+                    </span> -->
+                        <!-- Increment Limit -->
+                <span ng-show="filtered.length == 0">
+
+                    <img src="static/images/sorry.png" class="error_img">
+                    <p> We’re sorry, there are no cars that meet your search criteria.
+                        Please try expanding your search and thanks for using CompareCarPrices.com</p>
+                </span>
+              
+            </div>
+
+        <!--Display Car Info end -->                
+        <!-- </div> -->
+            
+        <!-- <a style="display: block;" href="#" class="gototop" title="Go to top"></a> -->
+
+    </div>

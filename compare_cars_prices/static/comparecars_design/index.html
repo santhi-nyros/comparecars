@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CompareCarPrices.com</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="hedr container-fluid">
+	<header>
+		<div class="container">
+			<div class="logo-blk">
+				<img src="images/logo.png" alt="logo" >
+				
+			</div>
+<div class="row">
+	<div class="col-md-3"></div>	<div class="col-md-6 serh-blk">	<input type="text" class="form-control" placeholder="Enter City.." id="searchTop">
+	<i class="glyphicon glyphicon-search"></i>
+	</div>
+		<div class="col-md-3"></div>	</div>
+				<!-- <span class="glyphicon glyphicon-search" ></span> -->
+		</div>
+	</header>
+	</div>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="row"><h4>Select City</h4>
+						<select class="form-control">
+						  	<option>Hyderabad</option>
+						  	<option>Bangalore</option>
+						  	<option>Mumbai</option>
+						  	<option>Pune</option>
+						  	<option>Chennai</option>
+						</select>
+					</div>
+					<div class="row"><h4>Select Price</h4>
+						<div class="checkbox">
+						  	<label>
+						    	<input type="checkbox" id="blankCheckbox" value="option1" aria-label="1 Lakh">1 Lakh
+						  	</label><br>
+						  	<label>
+						    	<input type="checkbox" id="blankCheckbox" value="option1" aria-label="2 Lakh">2 Lakhs
+						  	</label><br>
+						  	<label>
+						    	<input type="checkbox" id="blankCheckbox" value="option1" aria-label="3 Lakh">3 Lakhs
+						  	</label><br>
+						  	<label>
+						    	<input type="checkbox" id="blankCheckbox" value="option1" aria-label="4 Lakh">4 Lakhs
+						  	</label>
+						  	
+						</div>
+					</div>
+					<div class="row"><h4>Makes</h4>
+						<ul id="mklist" class="features">
+							<li id="hvmodelsMaruti-Suzuki" class="hvchild">
+								<div class="spclass" onclick="ucsMMtoggler1('Maruti-Suzuki');">
+									<span class="rcircle"></span>
+									<input id="woffMaruti-Suzuki" class="pull-right muklia" type="checkbox" onclick="sociomantic_call('make','Maruti-Suzuki');ucsMMtoggler('Maruti-Suzuki');GetSearch_result();" name="makes" value="Maruti Suzuki">
+									<span class="pull-left">Maruti Suzuki</span>
+									<div class="clr"></div>
+								</div>
+								<!-- <ul id="chmodelsMaruti-Suzuki" style="display: block;"> -->
+									<!-- <li>
+									<label>
+									1000 (70)
+									<input id="mod_1000" class="pull-right mmodel-Maruti-Suzuki mmdl" type="checkbox" onclick="sociomantic_call('model','1000');_modelwise_search('Maruti-Suzuki','1000', this)" value="1000" name="models">
+									</label>
+									</li>
+									<li>
+									<label>
+									1000 (70)
+									<input id="mod_1000" class="pull-right mmodel-Maruti-Suzuki mmdl" type="checkbox" onclick="sociomantic_call('model','1000');_modelwise_search('Maruti-Suzuki','1000', this)" value="1000" name="models">
+									</label>
+									</li> -->
+								<!-- </ul> -->
+							</li>
+							<li id="hvmodelsHyundai" class="hvchild">
+								<div class="spclass" onclick="ucsMMtoggler1('Hyundai');">
+								<span class="rcircle"></span>
+								<input id="woffHyundai" class="pull-right muklia" type="checkbox" onclick="sociomantic_call('make','Maruti-Suzuki');ucsMMtoggler('Maruti-Suzuki');GetSearch_result();" name="makes" value="Maruti Suzuki">
+								<span class="pull-left">Hyundai</span>
+								<div class="clr"></div>
+								</div>
+							</li>
+							<li id="hvmodelsHonda" class="hvchild">
+								<div class="spclass" onclick="ucsMMtoggler1('Honda');">
+								<span class="rcircle"></span>
+								<input id="woffHonda" class="pull-right muklia" type="checkbox" onclick="sociomantic_call('make','Maruti-Suzuki');ucsMMtoggler('Maruti-Suzuki');GetSearch_result();" name="makes" value="Maruti Suzuki">
+								<span class="pull-left">Honda</span>
+								<div class="clr"></div>
+								</div>
+							</li>
+							<li id="hvmodelsMaruti-Suzuki" class="hvchild">
+								<div class="spclass" onclick="ucsMMtoggler1('Maruti-Suzuki');">
+								<span class="rcircle"></span>
+								<input id="woffMaruti-Suzuki" class="pull-right muklia" type="checkbox" onclick="sociomantic_call('make','Maruti-Suzuki');ucsMMtoggler('Maruti-Suzuki');GetSearch_result();" name="makes" value="Maruti Suzuki">
+								<span class="pull-left">Tata</span>
+								<div class="clr"></div>
+								</div>
+							</li>
+							<li id="hvmodelsMaruti-Suzuki" class="hvchild">
+								<div class="spclass" onclick="ucsMMtoggler1('Maruti-Suzuki');">
+								<span class="rcircle"></span>
+								<input id="woffMaruti-Suzuki" class="pull-right muklia" type="checkbox" onclick="sociomantic_call('make','Maruti-Suzuki');ucsMMtoggler('Maruti-Suzuki');GetSearch_result();" name="makes" value="Maruti Suzuki">
+								<span class="pull-left">Tayota</span>
+								<div class="clr"></div>
+								</div>
+							</li>
+							<li id="hvmodelsMaruti-Suzuki" class="hvchild">
+								<div class="spclass" onclick="ucsMMtoggler1('Maruti-Suzuki');">
+								<span class="rcircle"></span>
+								<input id="woffMaruti-Suzuki" class="pull-right muklia" type="checkbox" onclick="sociomantic_call('make','Maruti-Suzuki');ucsMMtoggler('Maruti-Suzuki');GetSearch_result();" name="makes" value="Maruti Suzuki">
+								<span class="pull-left">Chevrolet</span>
+								<div class="clr"></div>
+								</div>
+							</li>
+							<li id="hvmodelsMaruti-Suzuki" class="hvchild">
+								<div class="spclass" onclick="ucsMMtoggler1('Maruti-Suzuki');">
+								<span class="rcircle"></span>
+								<input id="woffMaruti-Suzuki" class="pull-right muklia" type="checkbox" onclick="sociomantic_call('make','Maruti-Suzuki');ucsMMtoggler('Maruti-Suzuki');GetSearch_result();" name="makes" value="Maruti Suzuki">
+								<span class="pull-left">Mahindra</span>
+								<div class="clr"></div>
+								</div>
+							</li>
+							<li id="hvmodelsMaruti-Suzuki" class="hvchild">
+								<div class="spclass" onclick="ucsMMtoggler1('Maruti-Suzuki');">
+								<span class="rcircle"></span>
+								<input id="woffMaruti-Suzuki" class="pull-right muklia" type="checkbox" onclick="sociomantic_call('make','Maruti-Suzuki');ucsMMtoggler('Maruti-Suzuki');GetSearch_result();" name="makes" value="Maruti Suzuki">
+								<span class="pull-left">Skoda</span>
+								<div class="clr"></div>
+								</div>
+							</li>
+						</ul>
+
+					</div>
+					<div class="row"><h4>Select Model Year</h4>
+
+						<select class="form-control">
+						  	<option>2011</option>
+						  	<option>2012</option>
+						  	<option>2013</option>
+						  	<option>2014</option>
+						  	<option>2015</option>
+						</select>
+					
+
+					</div>
+				</div>
+				<!--Details Start -->
+				<div class="col-md-9" id="displayData">
+
+					<div class="container"><h1>Details</h1>
+						<ul class="carDetails">
+							<li>
+								<div class="row">
+									<div class="col-md-4">
+									<img width="235" alt="Hyundai i10 Magna 1.2(2011)" src="http://imagecdn5.cartrade.com/img/300x225/lis/Hyundai_i10_606377_9594_1_1445946799888.jpg" title="Hyundai i10 Magna 1.2(2011)">
+									</div>
+									<div class="col-md-8">
+										<p><a href="details.html">Maruthi Suzuki 1000</a></p> 
+										<p>Price : 76000</p>
+										<p>Color : White</p>
+									</div>
+								</div><br>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-md-4">
+									<img width="235" alt="Hyundai i10 Magna 1.2(2011)" src="http://imagecdn5.cartrade.com/img/300x225/lis/Hyundai_i10_606377_9594_1_1445946799888.jpg" title="Hyundai i10 Magna 1.2(2011)">
+									</div>
+									<div class="col-md-8">
+										<p><a href="details.html">Maruthi Suzuki 1000</a></p> 
+										<p>Price : 76000</p>
+										<p>Color : White</p>
+									</div>
+								</div><br>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-md-4">
+									<img width="235" alt="Hyundai i10 Magna 1.2(2011)" src="http://imagecdn5.cartrade.com/img/300x225/lis/Hyundai_i10_606377_9594_1_1445946799888.jpg" title="Hyundai i10 Magna 1.2(2011)">
+									</div>
+									<div class="col-md-8">
+										<p><a href="details.html">Maruthi Suzuki 1000</a></p> 
+										<p>Price : 76000</p>
+										<p>Color : White</p>
+									</div>
+								</div><br>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-md-4">
+									<img width="235" alt="Hyundai i10 Magna 1.2(2011)" src="http://imagecdn5.cartrade.com/img/300x225/lis/Hyundai_i10_606377_9594_1_1445946799888.jpg" title="Hyundai i10 Magna 1.2(2011)">
+									</div>
+									<div class="col-md-8">
+										<p><a href="details.html">Maruthi Suzuki 1000</a></p> 
+										<p>Price : 76000</p>
+										<p>Color : White</p>
+									</div>
+								</div><br>
+							</li>
+						</ul>
+						
+						
+					</div>
+				<!--Details Close -->
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- The main page content -->
+	<!-- <div class="row" id="top_header">
+		<input type="text" class="form-control" placeholder="Text input" id="searchTop"> -->
+		<!-- <div class="col-md-12"></div> -->
+  	<!-- 	</div>
+	<div class="container">
+		
+  		<div class="masthead">fsdfas
+  		</div>
+	
+		<h1>Hai</h1> -->
+	<!-- The main page content close -->
+	<!-- </div> -->
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

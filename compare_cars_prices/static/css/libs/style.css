@@ -1,0 +1,393 @@
+body, html, ul, li, p, a, img, span, h1, h2, h3, h4, h5, h6{font-family: "Ubuntu",sans-serif;padding: 0px;margin: 0px;border: 0 none;}
+header.scroll-to-fixed-fixed .logo_section .left_section {
+    margin-bottom: 0;
+    margin-top: 3px;
+}
+ul li {
+    list-style-type: none;
+}
+header{height: 100px; background: #FFCF00;font-family: "Verdana", Sans-serif}
+@font-face {
+    font-family: myFirstFont;
+    src: url(.../fonts/Sansation_Light.ttf);
+}
+@font-face {
+    font-family: contentFont;
+    src: url(.../fonts/Aaargh.ttf);
+}
+body{
+   /* font-family: myFirstFont;*/
+    font-family: "Verdana", Sans-serif;
+    background: #F7F7F7;
+    
+}
+.main {
+    background-color: #F7F7F7;    
+    
+}
+.head {width: 1000px; margin: 0px auto;}
+/*header .logo, header .search_form input[type="text"], header .logo_section .left_section, header div.contact_info {
+}
+.logo_section .left_section {
+    float: left;
+    margin-bottom: 9px;
+    width: 670px;
+}*/
+
+.left_section{width:400px;float: left;}
+.left_section h1 {font-style: italic;font-weight: bolder;}
+.search_section{
+    width:500px;
+    float: left; 
+    height: 30px;
+    margin-top: 30px;
+    /*box-shadow: 16px 16px #FFAE00;*/
+    border-radius: 5px;
+   /* position: relative;*/
+    border: none!important;
+}
+.search_form #search{width: 550px;margin-left: 0px;height: 30px;
+    border: none!important;border-radius: 5px;
+    box-shadow: 6px 6px #FFAE00;
+}
+.search_form input[type="text"]{padding-left: 15px;}
+/*.search_form input[type="submit"] {
+    background: transparent url("../img/search_icon.png") no-repeat scroll 0% 0%;
+    border: 0px none;
+    cursor: pointer;
+    display: inline-block;
+    height: 22px;
+    position: absolute;
+    right: 18px;
+    text-indent: -99999px;
+    top: 17px;
+    width: 22px;
+    margin-right: 268px;
+    margin-top: 23px;
+}
+*/
+#main{
+    margin-top: 200px;
+   /* margin-left: 200px;*/
+    width: 1080px;
+    margin-left: -69px;
+   /* margin: 0px auto;*/
+    height: auto;
+    position: absolute;
+   /* background: #FFFFFF;*/
+    background: #FFF none repeat scroll 0% 0%;
+    box-shadow: 2px 3px 8px #999;
+}
+
+
+#main1{
+    margin-top: 200px;
+   /* margin-left: 200px;*/
+    width: 1080px;
+    margin-left: -69px;
+   /* margin: 0px auto;*/
+    height: auto;
+    position: absolute;
+   /* background: #FFFFFF;*/
+    background: #FFF none repeat scroll 0% 0%;
+    box-shadow: 2px 3px 8px #999;
+}
+
+.asideFilter{
+    width: 320px;
+   /* background-color: #FFCF00;*/
+    float: left;
+    /*height: auto;*/
+    border-right: 1px solid #E6E6E6 ;
+    background:#FFFFFF;
+   /* border-left:5px solid #E6E6E6 ;
+    border-top:5px solid #E6E6E6 ;*/    
+    box-shadow: 1px 0px 4px #CCC;
+    position: relative;
+    padding-bottom: 27px;
+    padding-top: 14px;
+
+}
+
+.resultdiv{
+    margin-left: 319px;
+margin-top: -325px;
+}
+.asideInfo{
+    width: 752px;
+   /* background-color: grey;*/
+    /*height: 100%;*/
+    float: left;
+    padding-top: 0px;
+    background:#FFFFFF;
+    font-family:"Arial",sans-serif;
+
+   /* border-right:3px solid #E6E6E6 ;
+    border-top:5px solid #E6E6E6 ;
+*/
+}
+/*#main{border : 1px solid black;}*/
+.city{
+box-shadow: 0px 0px 3px #FFF inset, 0px 1px 1px rgba(0, 0, 0, 0.1);}
+.filters{
+    width: 250px;
+    margin: 0px auto;
+}
+.filters select:hover{
+    border: 2px solid #FA8D00;
+}
+.makes{
+    width: 250px;
+    margin: 0px auto;
+    /*height: 1250px;*/
+    background: #F8F8F8;
+    border: 1px solid #CECDCD;
+    border-radius: 5px;
+    position: relative;
+
+}
+.makeHead{
+    font-weight: bolder;
+    font-size: 16px;
+    font-family: "Ubuntu",sans-serif;
+    margin: 0px auto;
+    padding: 15px;
+    margin-bottom:-15px;
+}
+.makeHead input[type=checkbox]{float: right; 
+    box-sizing: initial;
+    margin-right: 10px;
+    margin-bottom: 1px;
+}
+
+/*.makes input[type=checkbox]:hover{
+    border: 2px solid #FA8D00;
+}
+*//*#checkposition{
+position: relative;
+float: right;
+margin-left: 194px;
+margin-top: -26px;
+}*/
+.makes .modelList{    
+    margin-left: 42px;
+    font-size: 13px;
+}
+.makes .modelList input[type=checkbox]{float: right; 
+    box-sizing: initial;
+    margin-right: 10px;
+     }
+
+
+footer{
+    height: 70px;
+    background-color: grey;
+/*    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;*/
+
+}
+
+.asideInfo .listing_item .item{
+    width: 90%;
+    height: 220px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    border: 1px solid #CECDCD;
+   /* background: ;*/
+    border-radius: 5px;
+    /*border: 1px solid;*/
+    /*box-shadow: 1px 2px 3px 4px #E6E6E6;*/ 
+    box-shadow: 0px 2px 6px -1px #999;
+    margin-top: 20px;
+    font-family:"Arial",sans-serif;
+    padding-bottom: 10px;
+}
+.asideInfo .listing_item .item:hover {box-shadow: 1px 2px 3px 3px#FA8D00;
+/*border: 2px solid #FA8D00;*/}
+
+.asideInfo .listing_item .item .car_details{width: 100%;}
+
+#item{
+    height: auto;
+    /*font-family: contentFont;*/
+    font-family:"Arial",sans-serif;
+}
+
+#available_info{
+    margin-left: 142px;
+    font-family:"Arial",sans-serif;
+}
+#open {
+    margin-top: 11px;
+    width: 677px;
+    display: none;
+    position: absolute;
+}
+#item:hover #open{
+    display: block;
+}
+div .img-div {
+    width: 270px;
+    height: 174px;
+    margin-left: 15px;
+   /* border: 1px solid;*/
+}
+
+div .details-div {
+    width: 211px;
+    height: 143px;
+    padding: 7px;
+    margin-top: -166px;
+    float: right;
+    margin-right: 105px;
+}
+
+/*div .details-div{
+
+width: 200px;
+height: 168px;
+padding: 7px;
+float: right;
+
+}*/
+
+.subtitles{
+    padding-top: 10px;
+    color: gray;
+    font-weight: initial;
+
+}
+
+#more{
+    width: 200px;
+    height: 30px;
+    margin-top: -22px;
+    margin-left: 310px;
+    float: right;
+    margin-right: -100px;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+
+
+/* Go To Top start*/
+/*.gototop {
+    background-image: url("../img/gototop_sprite.png");
+    background-position: -47px 0px;
+    width: 43px;
+    height: 32px;
+    display: block;
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
+    z-index: 100;
+}*/
+
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display:none;
+    background: none;
+}
+a {
+    text-decoration: none;
+    outline: 0px none;
+    color: inherit;
+}
+/* Go To Top end */
+
+.filter_section .filter_section_title.closed span {
+    background-position: 0px -22px;
+}
+
+.filter_section .filter_section_title span {
+    background-image: url("../img/accordion_arrow.png");
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: text-top;
+    position: absolute;
+    right: 0px;
+}
+
+/*.car_details{
+    width: 90%;
+}*/
+
+/*.car_details{
+border: 1px solid #808080;
+border-radius: 10px;
+padding: 5px;
+margin-bottom: 30px;
+background-color: white;
+width: 572px;
+height: 220px;
+box-shadow: 1px 2px 3px #000;
+}
+.img-div{
+
+width: 285px;
+height: 183px;
+}
+.details-div{
+    margin-top: -177px;
+
+width: 250px;
+height: 168px;
+padding: 7px;
+float: right;
+}
+
+*/
+
+/*#acc_title{
+    font-size:15px;
+    margin-bottom:-15px;
+    border: none;
+    text-align: left;
+}*/
+
+
+
+.error_img{
+    margin-left: 21px;
+    margin-top: 42px;
+}
+
+
+#sticky {
+    margin-left: 0px;
+}
+
+#sticky.stick {
+    position: fixed;
+top: 177px;
+z-index: 10000;
+border-radius: 5px;
+margin-left: 0px;
+width: 312px;
+font-size: 18px;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.home_button{
+    margin-left: 240px;
+background-color: white;
+border: none;
+}
+
+
+.spinner-align{
+    margin-left: 322px;
+margin-top: 150px;
+position: absolute;
+}
